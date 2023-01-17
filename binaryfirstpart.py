@@ -48,4 +48,12 @@ class BinarySearchTreeNode:
             else:
                 return False
 
+    def build_tree(elements):
+        print("Building tree with elements: ",elements)
+        root = BinarySearchTreeNode(elements[0])
+
+        for i in range(1,len(elements)):
+            root.add_child(elements[i])
+
+        return root
         
