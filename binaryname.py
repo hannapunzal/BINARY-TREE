@@ -20,4 +20,15 @@ class BinarySearchTreeNode:
                 self.right.add_child(data)
             else:
                 self.right = BinarySearchTreeNode(data)
+    
+    def in_order_traversal(self):
+        elemements = []
+        if self.left:
+            elemements += self.left.in_order_traversal()
         
+        elemements.append(self.data)
+
+        if self.right:
+            elemements += self.right.in_order_traversal()
+        
+        return elemements
