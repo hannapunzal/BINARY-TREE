@@ -79,5 +79,9 @@ class BinarySearchTreeNode:
         if self.right is None:
             return self.data
         return self.right.obtain_max()
-        
+    
+    def obtain_min(self):
+        if self.left is None:
+            return self.data
+        return self.left.obtain_min()
 
