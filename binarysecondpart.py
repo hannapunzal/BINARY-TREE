@@ -48,17 +48,6 @@ class BinarySearchTreeNode:
             else:
                 return False
 
-
-    def find_min(self):
-        if self.left is None:
-            return self.data
-        return self.left.find_min()
-    
-    def find_max(self):
-        if self.right is None:
-            return self.data
-        return self.right.find_min()
-
     def delete(self, val):
         if val < self.data:
             if self.left:
@@ -76,9 +65,19 @@ class BinarySearchTreeNode:
 
             min_val = self.right.find_min()
             self.data = min_val
-            self.right = min_val
+            self.right = self.right.delete(min_val)
         
         return self
+
+    def find_min(self):
+        if self.left is None:
+            return self.data
+        return self.left.find_min()
+    
+    def find_max(self):
+        if self.right is None:
+            return self.data
+        return self.right.find_max()
 
 def build_tree(elements):
     print("Building binary tree with these elements: ",elements)
@@ -88,5 +87,17 @@ def build_tree(elements):
         root.add_child(elements[i])
 
     return root
-    
+
+if __name__ == '__main__':
+    numbers_tree = build_tree([15,23,1,45,32,11,10,16])
+    numbers_tree.delete(1)
+    print("--> 1 deleted. Updated elements: ",numbers_tree.in_order_traversal())
+
+    numbers_tree = build_tree([15,23,1,45,32,11,10,16])
+    numbers_tree.delete(45)
+    print("--> 45 deleted. Updated elements: ",numbers_tree.in_order_traversal())
+
+    numbers_tree = build_tree([15,23,1,45,32,11,10,16])
+    numbers_tree.delete(11)
+    print("11 deleted. Updated elements: ",numbers_tree.in_order_traversal())
     
