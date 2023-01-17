@@ -11,13 +11,13 @@ class BinarySearchTreeNode:
             if self.left:
                 self.left.add_child(data)
             else:
-                self.left = BinarySearchTreeNode()
+                self.left = BinarySearchTreeNode(data)
         
         else:
             if self.right:
                 self.right.add_child(data)
             else:
-                self.right = BinarySearchTreeNode()
+                self.right = BinarySearchTreeNode(data)
 
     def in_order_traversal(self):
         elements = []
