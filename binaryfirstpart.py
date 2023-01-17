@@ -48,7 +48,7 @@ class BinarySearchTreeNode:
             else:
                 return False
 
-    def build_tree(elements):
+def build_tree(elements):
         print("Building tree with elements: ",elements)
         root = BinarySearchTreeNode(elements[0])
 
@@ -57,14 +57,14 @@ class BinarySearchTreeNode:
 
         return root
 
-    if __name__ == '__main__':
-        numbers_tree = build_tree([29,15,24,56,62,78,98,1])
-        print("In order traversal prints out the sorted list (NUMBERS): ",numbers_tree.in_order_traversal())
+if __name__ == '__main__':
+    numbers_tree = build_tree([29,15,24,56,62,78,98,1])
+    print("In order traversal prints out the sorted list (NUMBERS): ",numbers_tree.in_order_traversal())
 
-        countries = ["India," "Pakistan", "Germany", "USA", "China","India","UK","USA"]
-        country_tree = build_tree(countries)
-        print("In order traversal prints out sorted list of the countries: ",country_tree.in_order_traversal())
+    countries = ["India," "Pakistan", "Germany", "USA", "China","India","UK","USA"]
+    country_tree = build_tree(countries)
+    print("In order traversal prints out sorted list of the countries: ",country_tree.in_order_traversal())
 
-        print("Search method on build tree")
-        print("Is Philippines in the list? ", country_tree.search("Philippines"))
-        print("Is Pakistan in the list? ",country_tree.search("Pakistan"))
+    print("Search method on build tree")
+    print("Is Philippines in the list? ", country_tree.search("Philippines"))
+    print("Is Pakistan in the list? ",country_tree.search("Pakistan"))
