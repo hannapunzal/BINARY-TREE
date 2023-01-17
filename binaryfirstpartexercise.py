@@ -103,5 +103,26 @@ class BinarySearchTreeNode:
             root.join_child(elements[1])
         
         return root
-        
 
+    if __name__ == '__main__':
+        numbers = [12,1,45,24,64,10,33,90]
+        letters = ["B","C","F","H","K","I"]
+
+        numbers_tree = build_tree(numbers)
+        letters_tree = build_tree(letters)
+
+        print("Input numbers: ",numbers)
+        print("Min: ",numbers_tree.obtain_min())
+        print("Max: ",numbers_tree.obtain_max())
+        print("Sum: ",numbers_tree.sum())
+        print("In order traversal: ",numbers_tree.in_order_traversal())
+        print("Pre order traversal: ",numbers_tree.pre_order_traversal())
+        print("Post order traversal: ",numbers_tree.post_order_traversal())
+        print("---------------------------")
+        print("Input letters: ",letters)
+        print("Min: ",letters_tree.obtain_min())
+        print("Max: ",letters_tree.obtain_max())
+        print("Sum: ",letters_tree.sum())
+        print("In order traversal: ",letters_tree.in_order_traversal())
+        print("Pre order traversal: ",letters_tree.pre_order_traversal())
+        print("Post order traversal: ",letters_tree.post_order_traversal())
