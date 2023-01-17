@@ -96,3 +96,12 @@ class BinarySearchTreeNode:
             sum_right = 0
         return self.data + sum_left + sum_right
 
+    def build_tree(elements):
+        root = BinarySearchTreeNode(elements[0])
+
+        for i in range(1,len(elements)):
+            root.join_child(elements[1])
+        
+        return root
+        
+
