@@ -107,3 +107,26 @@ def build_tree(elements):
         root.add_child(elements[i])
 
     return root
+
+if __name__ == '__main__':
+    full_name = ["H","A","N","N","A","F","A","I","T","H","P","U","N","Z","A","L",]
+    full_name_tree = build_tree(full_name)
+    # display
+    print("--> Full name: ",full_name)
+    print()
+    #traverse
+    print("--> In order traversal: ",full_name_tree.in_order_traversal())
+    print("--> Pre order traversal: ",full_name_tree.pre_order_traversal())
+    print("--> Post order traversal: ",full_name_tree.post_order_traversal())
+    #min and max
+    print()
+    print("--> Min: ",full_name_tree.min())
+    print("--> Max: ",full_name_tree.max())
+    print()
+    #delete
+    full_name_tree.delete("A")
+    print("--> Removed letter A: ",full_name_tree.in_order_traversal())
+    print()
+    #search
+    print("Is there an E in the given name? ",full_name_tree.search("E"))
+    print("Is there a P in the given name? ", full_name_tree.search("P"))
